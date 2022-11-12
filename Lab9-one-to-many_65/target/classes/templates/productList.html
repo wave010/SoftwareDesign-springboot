@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmln:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Inventory Homepage</title>
+ <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+</head>
+<body>
+    <div align="center" class="container">
+        <h1>Product List</h1>
+     </div>
+    
+     
+    <div class="container">
+    <div class="row">
+        <div class="col-lg-10 mt-5 mb-5">
+     
+             <table id="example" class="table table-bordered" style="width: 100%">
+                <thead >
+                    <tr class="">
+                        <th>Name</th>
+                        <th>Quantity</th>
+                        <th>Price</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                <tr th:each="product : ${product}">
+                    <td th:text="${product.name}"></td>
+                    <td th:text="${product.quantity}"></td>
+                    <td th:text="${product.price}"></td>
+                    <td><a th:href="@{/edit_product/{id}(id=${product.id})}">Edit</a></td>
+                    <td><a th:href="@{/delete_product/{id}(id=${product.id})}">Delete</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>      
+     </div>
+    </div>
+
+    <p><a href="/new_product">Add a product</a></p>
+</div>
+<script th:src="@{/webjars/jquery/3.0.0/jquery.min.js}"></script>
+<script th:src="@{/webjars/popper.js/1.12.9-1/umd/popper.min.js}"></script>
+<script th:src="@{/webjars/bootstrap/4.0.0-2/js/bootstrap.min.js}"></script>
+</body>
+</html>
