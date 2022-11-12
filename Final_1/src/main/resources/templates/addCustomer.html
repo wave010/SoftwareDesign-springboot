@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Final Task 1</title>
+	
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+	<style>
+		body{
+			display:flex;
+			align-items:center;
+			justify-content: center;
+			flex-direction:column;
+		}
+		input{
+			margin-left:10px;
+			margin-bottom:10px;
+		}
+	</style>
+</head>
+
+<body>
+ 	<div align="center">
+        <h1> Add new a customer </h1>
+    </div >
+    <div>
+      <form action="#" th:action="@{/add-new-customer}" method="post" >
+     		<label>Name:</label>
+     		<input type="text" name="name" /><br>
+  
+     		<label >Email:</label>
+     		<input type="text" name="email" /><br>
+  	
+     		<label >Telephone:</label>
+     		<input type="text" name="telephone" /><br>
+   	
+     		<label >address:</label>
+     		<input type="text" name="address_line1" /><br>
+   
+     		<label >Zipcode:</label>
+     		<input type="text" name="zipcode" /><br>
+      <button type="submit">Add Customer</button>    
+   </form> 
+    
+    </div>
+  
+</body>
+</html>

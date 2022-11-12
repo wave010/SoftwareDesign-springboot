@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Final Task 2</title>
+	
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+</head>
+
+<body>
+	<h1 align="center" >Final task 2</h1>
+	
+	<div align="center">
+		<div >
+   	 	<p><a th:href="@{/showAllCustomer}">get all customer</a></p>	
+	</div>
+	
+	<div >
+   	 	<p><a th:href="@{/showAllInvoice}">get all invoice</a></p>	
+	</div>
+	
+	<div >
+   	 	<p><a th:href="@{/addInvoice}">add a new invoice</a></p>	
+	</div>
+	</div>
+	
+	
+	<div align="center"> 
+		<form th:action="@{/find-customer}" method="post">
+			<label>ID:</label>
+     		<input type="text" name="id"/>
+     		<button type="submit">find customer by Id</button>   
+		</form>
+	</div><br>
+	
+	<div align="center"> 
+		<form th:action="@{/find-Invoice}" method="post">
+			<label>ID:</label>
+     		<input type="text" name="id"/>
+     		<button type="submit">find invoice by Id</button>   
+		</form>
+	</div><br>
+	
+	
+		<div align="center"> 
+		<form th:action="@{/delete-Invoice}" method="post">
+			<label>ID:</label>
+     		<input type="text" name="id"/>
+     		<button type="submit">Delete an invoice by id</button>   
+		</form>
+	</div><br>
+   	
+</body>
+</html>

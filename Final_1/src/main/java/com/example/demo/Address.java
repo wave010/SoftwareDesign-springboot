@@ -1,0 +1,57 @@
+package com.example.demo;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.MapsId;
+import javax.persistence.OneToOne;
+
+@Entity
+public class Address {
+	
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(name = "id")
+	private Integer id ;
+	
+	private String address_line1 ;
+	private String zipcode;
+	
+	@OneToOne
+	@MapsId
+	@JoinColumn(name = "id")
+	private Customer customer;
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public String getAddress_line1() {
+		return address_line1;
+	}
+
+	public void setAddress_line1(String address_line1) {
+		this.address_line1 = address_line1;
+	}
+	public String getZipcode() {
+		return zipcode;
+	}
+
+	public void setZipcode(String zipcode) {
+		this.zipcode = zipcode;
+	}
+
+	public Customer getCustomer() {
+		return customer;
+	}
+
+	public void setCustomer(Customer customer) {
+		this.customer = customer;
+	}
+}
